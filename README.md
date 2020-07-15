@@ -14,4 +14,13 @@
 - 数据共享:提供了方便的api来处理子应用与父框架之间的数据流向. 
 
 
+先上代码: 
 [实践demo地址](https://github.com/junjie-lean/qiankun-react-microApp-practice)
+
+主要目录结构:  
+
+- main
+- 3000
+- 4000
+
+其中,main是用create-react-app创建,3000和4000是用自己搭的(react-hook脚手架)[https://github.com/junjie-lean/jf-web-app-hook]环境创建.
