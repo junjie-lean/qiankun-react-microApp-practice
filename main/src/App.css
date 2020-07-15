@@ -1,0 +1,23 @@
+#p3000,
+#p4000 {
+  display: inline-block;
+  width: 500px;
+  height: 500px;
+  border: 1px solid red;
+}
+
+.sonContainer {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+}
+
+.App {
+  padding: 30px;
+}
+
+.btnzone {
+  width: 300px;
+  display: flex;
+  justify-content: space-around;
+}
