@@ -23,4 +23,11 @@
 - 3000
 - 4000
 
-其中,main是用create-react-app创建,3000和4000是用自己搭的(react-hook脚手架)[https://github.com/junjie-lean/jf-web-app-hook]环境创建.
+其中,main是用create-react-app创建,3000和4000是用自己搭的react-hook(脚手架)[https://github.com/junjie-lean/jf-web-app-hook]环境创建.为什么不都用cra创建呢,等下下面有说明.
+
+main项目由cra创建,做为主项目,只需要做两件事: 
+
+1. 注册微应用   
+2. 项目状态维护  
+
+qiankun提供了两种注册微应用的方式,一种是通过监听路由变化来自动触发qiankun的匹配逻辑,另一种是手动调用qiankun提供的函数来注册.
