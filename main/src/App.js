@@ -2,7 +2,7 @@
  * @Author: junjie.lean
  * @Date: 2020-07-15 13:52:07
  * @Last Modified by: junjie.lean
- * @Last Modified time: 2020-07-15 15:41:36
+ * @Last Modified time: 2020-07-16 10:39:51
  */
 
 import React, { useEffect, useState, useRef } from "react";
@@ -21,7 +21,6 @@ function App() {
     });
     microApp.states = initGlobalState({ value: 0 });
     microApp.states.onGlobalStateChange((state, prev) => {
-      console.log(state);
       setValue(state.value);
     });
     return microApp;
