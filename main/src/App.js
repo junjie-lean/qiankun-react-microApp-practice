@@ -2,12 +2,12 @@
  * @Author: junjie.lean
  * @Date: 2020-07-15 13:52:07
  * @Last Modified by: junjie.lean
- * @Last Modified time: 2020-07-16 10:39:51
+ * @Last Modified time: 2020-07-16 11:17:49
  */
 
 import React, { useEffect, useState, useRef } from "react";
 import "./App.css";
-import { loadMicroApp, prefetchApps, initGlobalState } from "qiankun";
+import { initGlobalState, loadMicroApp } from "qiankun";
 function App() {
   const [value, setValue] = useState(0);
   let a1 = useRef(),
@@ -19,6 +19,7 @@ function App() {
       entry: `//localhost:${port}`,
       container: `#p${port}`,
     });
+
     microApp.states = initGlobalState({ value: 0 });
     microApp.states.onGlobalStateChange((state, prev) => {
       setValue(state.value);
