@@ -4,7 +4,9 @@ import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "../page/layout-home";
 
 export default function RouterRelation() {
-  const basename = window.__POWERED_BY_QIANKUN__ ? "/s4000" : "/";
+  const basename = window.__POWERED_BY_QIANKUN__
+    ? window.location.pathname
+    : "/";
   return (
     <Router basename={basename}>
       <Switch

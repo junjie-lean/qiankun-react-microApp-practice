@@ -2,7 +2,7 @@
  * @Author: junjie.lean
  * @Date: 2020-07-16 13:58:40
  * @Last Modified by: junjie.lean
- * @Last Modified time: 2020-07-17 13:33:37
+ * @Last Modified time: 2020-07-17 14:26:23
  */
 
 import React,{useEffect} from "react";
@@ -31,7 +31,7 @@ export default withRouter((props) => {
     loadMicroApp({
       name: "app1",
       entry: "//localhost:3000",
-      container: ".hookMicroApp1",
+      container: "#p3000",
     });
   };
 
@@ -39,7 +39,7 @@ export default withRouter((props) => {
     useMicroApp({
       name: "app2",
       entry: "//localhost:4000",
-      container: ".hookMicroApp2",
+      container: "#p4000",
     });
   };
   useEffect(()=>{
@@ -61,8 +61,8 @@ export default withRouter((props) => {
         </Button>
       </div>
       <div className="microAppBox">
-        <div className="hookMicroApp1 microAppContainer"></div>
-        <div className="hookMicroApp2 microAppContainer"></div>
+        <div className="hookMicroApp1 microAppContainer" id="p3000"></div>
+        <div className="hookMicroApp2 microAppContainer" id="p4000"></div>
       </div>
     </div>
   );

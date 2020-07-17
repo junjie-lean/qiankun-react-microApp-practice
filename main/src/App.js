@@ -2,12 +2,14 @@
  * @Author: junjie.lean
  * @Date: 2020-07-15 13:52:07
  * @Last Modified by: junjie.lean
- * @Last Modified time: 2020-07-16 11:17:49
+ * @Last Modified time: 2020-07-17 14:57:58
  */
 
 import React, { useEffect, useState, useRef } from "react";
 import "./App.css";
 import { initGlobalState, loadMicroApp } from "qiankun";
+import { Button } from "antd";
+
 function App() {
   const [value, setValue] = useState(0);
   let a1 = useRef(),
@@ -28,35 +30,49 @@ function App() {
   };
 
   useEffect(() => {
-    a1.current = createMicroApp("/s3000", "3000");
-    a2.current = createMicroApp("/s4000", "4000");
+    // a1.current = createMicroApp("/s3000", "3000");
+    // a2.current = createMicroApp("/s4000", "4000");
   }, []);
+
+  const createMicroAppOne = () => {
+    a1.current = createMicroApp("app1", "3000");
+  };
+
+  const createMicroAppTwo = () => {
+    // a2.current = createMicroApp("app2", "4000");
+  };
 
   return (
     <div className="App">
       <div className="btnzone">
-        <button
+        <Button type="primary" onClick={createMicroAppOne}>
+          createMicroApp
+        </Button>
+        <Button type="primary" onClick={createMicroAppTwo}>
+          createMicroApp
+        </Button>
+        <Button
           onClick={() => {
             setValue(value + 1);
           }}
         >
           value+1
-        </button>
-        <button
+        </Button>
+        <Button
           onClick={() => {
             setValue(value - 1);
           }}
         >
           value-1
-        </button>
-        <button
+        </Button>
+        <Button
           onClick={() => {
             a1.current.states.setGlobalState({ value });
             a1.current.states.offGlobalStateChange();
           }}
         >
           set to global state
-        </button>
+        </Button>
       </div>
       <h3>global state: value={value}</h3>
       <div className="sonContainer">

@@ -1,13 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import App from "./App";
-
+import Router from "./router";
 window.__POWERED_BY_QIANKUN__ = true;
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById("container")
-);
+ReactDOM.render(<Router />, document.getElementById("container"));
