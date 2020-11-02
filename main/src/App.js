@@ -2,7 +2,7 @@
  * @Author: junjie.lean
  * @Date: 2020-07-15 13:52:07
  * @Last Modified by: junjie.lean
- * @Last Modified time: 2020-07-17 14:57:58
+ * @Last Modified time: 2020-11-02 14:08:22
  */
 
 import React, { useEffect, useState, useRef } from "react";
@@ -18,7 +18,7 @@ function App() {
   const createMicroApp = (name, port) => {
     let microApp = loadMicroApp({
       name,
-      entry: `//localhost:${port}`,
+      entry: `//localhost:${port}/#/?token=475E1726F2CEDB6770292FE55949DE553FFAC310B7F0B6A9CB2B9F8B30AA23209897C0A9FD37F2F2597799FEC5FE4F86&orgcode=5100000001`,
       container: `#p${port}`,
     });
 
@@ -39,17 +39,17 @@ function App() {
   };
 
   const createMicroAppTwo = () => {
-    // a2.current = createMicroApp("app2", "4000");
+    a2.current = createMicroApp("app2", "4000");
   };
 
   return (
     <div className="App">
       <div className="btnzone">
         <Button type="primary" onClick={createMicroAppOne}>
-          createMicroApp
+          创建子应用A
         </Button>
         <Button type="primary" onClick={createMicroAppTwo}>
-          createMicroApp
+          创建子应用B
         </Button>
         <Button
           onClick={() => {
