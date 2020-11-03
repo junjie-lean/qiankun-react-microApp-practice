@@ -2,7 +2,7 @@
  * @Author: junjie.lean
  * @Date: 2019-12-19 15:41:40
  * @Last Modified by: junjie.lean
- * @Last Modified time: 2020-07-14 17:04:41
+ * @Last Modified time: 2020-07-27 10:49:54
  */
 
 /**
@@ -17,9 +17,6 @@ module.exports.setDevServer = function (defaultConfig = {}) {
     ...defaultConfig,
     contentBase: path.join(__dirname, "..", "public"),
     port: require("./../package").port,
-    headers: {
-      "Access-Control-Allow-Origin": "*",
-    },
     hot: true,
     watchContentBase: true,
     watchOptions: {

@@ -2,21 +2,20 @@
  * @Author: junjie.lean
  * @Date: 2020-03-17 09:52:08
  * @Last Modified by: junjie.lean
- * @Last Modified time: 2020-07-15 14:49:58
+ * @Last Modified time: 2020-08-07 11:02:56
  */
 
 import React, { createContext } from "react";
 import zhCN from "antd/lib/locale-provider/zh_CN";
 import RouterRelation from "../router/router-index";
-import PerformanceMonitor from "./public-monitor";
+import ProfilerMoniter from "./public-profile";
 import Antd from "antd";
 
-// public/heartbeat;
+
 export const Context = createContext({});
 
-export default function App(props) {
+export default function App() {
   const store = {
-    ...props,
     setValue: (key, value) => {
       store[key] = value;
     },
@@ -26,12 +25,12 @@ export default function App(props) {
   };
 
   return (
-    <PerformanceMonitor>
-      <Antd.ConfigProvider locale={zhCN}>
-        <Context.Provider value={store}>
+    <Antd.ConfigProvider locale={zhCN}>
+      <Context.Provider value={store}>
+        <ProfilerMoniter id="react-root-app" open={false}>
           <RouterRelation />
-        </Context.Provider>
-      </Antd.ConfigProvider>
-    </PerformanceMonitor>
+        </ProfilerMoniter>
+      </Context.Provider>
+    </Antd.ConfigProvider>
   );
 }

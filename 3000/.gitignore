@@ -1,0 +1,12 @@
+node_modules
+
+build
+
+package-lock.json
+
+coverage
+.DS_Store
+package-lock.json
+
+.vscode
+.vscode/settings.json

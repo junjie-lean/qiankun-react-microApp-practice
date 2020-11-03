@@ -2,7 +2,7 @@
  * @Author: junjie.lean
  * @Date: 2019-12-19 13:22:01
  * @Last Modified by: junjie.lean
- * @Last Modified time: 2020-06-01 13:32:21
+ * @Last Modified time: 2020-09-03 10:10:40
  */
 
 /**
@@ -11,6 +11,7 @@
 
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { resolve } = require("path");
+const os = require("os");
 
 module.exports.setDefaultModule = function (config = {}, loaderArr = []) {
   let rules = [...loaderArr];
@@ -28,7 +29,7 @@ module.exports.setDefaultModule = function (config = {}, loaderArr = []) {
     use: {
       loader: "babel-loader",
       options: {
-        cacheDirectory: true,
+        cacheDirectory: false,
         compact: mode === "production",
         presets: [
           //此配置如果修改，可能需要同步修改happyPack插件的配置,以优化打包构建效率
@@ -38,8 +39,8 @@ module.exports.setDefaultModule = function (config = {}, loaderArr = []) {
             {
               // spec: false, //是否启用更为规范的转换
               // debug: false,
-              // useBuiltIns: "entry", //入口文件出注入polyfill
-              useBuiltIns: "usage", //按需加入polyfill
+              useBuiltIns: "entry", //入口文件出注入polyfill
+              // useBuiltIns: "usage", //按需加入polyfill
               targets: {
                 chrome: "58",
                 ie: "11",
@@ -49,6 +50,9 @@ module.exports.setDefaultModule = function (config = {}, loaderArr = []) {
           ],
         ],
         plugins: [
+          "@babel/plugin-syntax-dynamic-import",
+          "@babel/plugin-proposal-class-properties",
+          ["@babel/plugin-syntax-class-properties", { loose: true }],
           [
             "import",
             {
@@ -68,7 +72,6 @@ module.exports.setDefaultModule = function (config = {}, loaderArr = []) {
             },
             "lodash",
           ],
-          ["@babel/plugin-proposal-class-properties", { loose: false }],
           [
             "module-resolver",
             {
@@ -93,7 +96,9 @@ module.exports.setDefaultModule = function (config = {}, loaderArr = []) {
               legacy: true,
             },
           ],
-          "@babel/plugin-syntax-dynamic-import",
+          // (() => {
+          //   return mode === "production" ? null : ["transform-react-jsx"];
+          // })(),
         ],
       },
     },
@@ -103,15 +108,15 @@ module.exports.setDefaultModule = function (config = {}, loaderArr = []) {
     test: /\.(scss|css)$/i,
     use: [
       "style-loader",
-      {
-        loader: MiniCssExtractPlugin.loader,
-        options: {
-          publicPath: "../../",
-          hmr: process.env.NODE_ENV == "development",
-          reloadAll: true,
-          esModule: true,
-        },
-      },
+      // {
+      //   loader: MiniCssExtractPlugin.loader,
+      //   options: {
+      //     publicPath: "../../",
+      //     hmr: process.env.NODE_ENV == "development",
+      //     reloadAll: true,
+      //     esModule: true,
+      //   },
+      // },
       {
         loader: "css-loader",
         options: {
@@ -141,7 +146,7 @@ module.exports.setDefaultModule = function (config = {}, loaderArr = []) {
   };
 
   const fontLoader = {
-    test: /.(ttf|eot|woff|woff2)$/i, // ttf|eot|svg|woff|woff2
+    test: /.(ttf|eot|woff|otf|woff2)$/i, // ttf|eot|svg|woff|woff2
     use: [
       {
         loader: "url-loader",
@@ -159,20 +164,24 @@ module.exports.setDefaultModule = function (config = {}, loaderArr = []) {
     test: /\.less$/i,
     // include: [/[\\/]node_modules[\\/].*antd/],
     use: [
-      MiniCssExtractPlugin.loader, // replaces extract text plugin in webpack 4
-      "css-loader",
+      "style-loader",
+      "css-loader", // translates CSS into CommonJS
+      // {
+      //   loader: "postcss-loader",
+      //   options: {
+      //     config: {
+      //       path: "./config/postcss.config.js",
+      //     },
+      //   },
+      // },
       {
-        loader: "postcss-loader",
-        options: {
-          config: {
-            path: "./config/postcss.config.js",
-          },
-        },
-      },
-      {
-        loader: "less-loader",
+        loader: "less-loader", // compiles Less to CSS
         options: {
           lessOptions: {
+            // modifyVars: {
+            //   "primary-color": "#3bbc6e",
+            //   "border-radius-base": "2px",
+            // },
             javascriptEnabled: true,
           },
         },
@@ -200,14 +209,14 @@ module.exports.setDefaultModule = function (config = {}, loaderArr = []) {
 
   rules.push(
     // svgrLoader,
+    babelLoader,
     styleLoader,
     lessLoader,
     rawLoader,
     urlLoader,
-    fontLoader,
+    fontLoader
     // markdownLoader,
-    babelLoader,
-    happypackLoader
+    // happypackLoader
   );
 
   return { rules };

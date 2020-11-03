@@ -2,7 +2,7 @@
  * @Author: junjie.lean
  * @Date: 2020-07-16 13:58:40
  * @Last Modified by: junjie.lean
- * @Last Modified time: 2020-07-17 14:26:23
+ * @Last Modified time: 2020-11-03 09:29:57
  */
 
 import React,{useEffect} from "react";
@@ -22,12 +22,6 @@ export const useMicroApp = (config) => {
 
 export default withRouter((props) => {
   const createMicroAppOne = () => {
-    // let a = useMicroApp({
-    //   name: "/s3000",
-    //   entry: "//localhost:3000",
-    //   container: ".hookMicroApp1",
-    // });
-    // console.log(a);
     loadMicroApp({
       name: "app1",
       entry: "//localhost:3000",

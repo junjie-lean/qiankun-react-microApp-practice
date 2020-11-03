@@ -2,7 +2,7 @@
  * @Author: junjie.lean
  * @Date: 2020-07-16 13:53:50
  * @Last Modified by: junjie.lean
- * @Last Modified time: 2020-11-02 17:35:01
+ * @Last Modified time: 2020-11-03 09:23:33
  */
 
 import React from "react";
@@ -21,7 +21,7 @@ export default (props) => {
   return (
     <Router>
       <Switch>
-        <Route path="/app" exact component={App} />
+        <Route path="/" exact component={App} />
         <Route path="/hook" component={Hook} />
       </Switch>
     </Router>
