@@ -2,17 +2,14 @@
  * @Author: junjie.lean
  * @Date: 2020-01-09 14:17:37
  * @Last Modified by: junjie.lean
- * @Last Modified time: 2020-07-20 10:11:30
+ * @Last Modified time: 2020-11-03 14:47:25
  */
 
 import "core-js";
 import React from "react";
-import { render } from "react-dom";
+import { render, unmountComponentAtNode } from "react-dom";
 import App from "./view/public/public-provider";
-// import svgs from "!!raw-loader!./media/svg/symbol-defs.svg";
-const DOM = document.getElementById("app");
-document.title = "jf-web-app-hook";
-// document.querySelector("#svg").innerHTML += svgs;
+const DOM = document.getElementById("microAppContainer4000");
 
 if (!window.__POWERED_BY_QIANKUN__) {
   render(<App />, DOM);
@@ -37,7 +34,8 @@ export async function mount(props) {
  * 应用每次 切出/卸载 会调用的方法，通常在这里我们会卸载微应用的应用实例
  */
 export async function unmount() {
-  ReactDOM.unmountComponentAtNode(DOM);
+  unmountComponentAtNode(DOM);
+  console.log("卸载子应用:4000");
 }
 
 /**

@@ -2,7 +2,7 @@
  * @Author: junjie.lean
  * @Date: 2019-12-19 13:33:20
  * @Last Modified by: junjie.lean
- * @Last Modified time: 2020-07-29 15:55:02
+ * @Last Modified time: 2020-11-03 10:48:05
  */
 
 /**
@@ -89,7 +89,7 @@ let config = {
     publicPath: "./",
     library: `${projectName}-[name]`,
     libraryTarget: "umd",
-    jsonpFunction: `webpackJsonp_${projectName}`,
+    jsonpFunction: `webapckJsonp_${projectName}`,
   },
   devtool: setSourceMapAbout(debugLevel).devtool,
   stats: setSourceMapAbout(debugLevel).stats,
