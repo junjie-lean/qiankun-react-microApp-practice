@@ -5,9 +5,9 @@ import Home from "../page/layout-home";
 
 export default function RouterRelation() {
   return (
-    <Router basename="/">
+    <Router>
       <Switch>
-        <Route path="/" component={Home} />
+        <Route path="*" component={Home} />
       </Switch>
     </Router>
   );
