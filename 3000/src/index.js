@@ -2,7 +2,7 @@
  * @Author: junjie.lean
  * @Date: 2020-01-09 14:17:37
  * @Last Modified by: junjie.lean
- * @Last Modified time: 2020-11-05 14:31:03
+ * @Last Modified time: 2020-11-06 17:16:34
  */
 
 import "core-js";
@@ -14,7 +14,7 @@ import App from "./view/public/public-provider";
 // document.querySelector("#svg").innerHTML += svgs;
 
 if (!window.__POWERED_BY_QIANKUN__) {
-  render(<App />, DOM);
+  render(<App />, document.getElementById("microAppContainer3000"));
 }
 
 function render(props = {}) {

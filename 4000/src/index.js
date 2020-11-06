@@ -2,7 +2,7 @@
  * @Author: junjie.lean
  * @Date: 2020-01-09 14:17:37
  * @Last Modified by: junjie.lean
- * @Last Modified time: 2020-11-05 14:31:50
+ * @Last Modified time: 2020-11-06 17:30:56
  */
 
 import "core-js";
@@ -33,7 +33,7 @@ export async function bootstrap() {
  * 应用每次进入都会调用 mount 方法，在这里触发应用的渲染方法
  */
 export async function mount(props) {
-  console.log("mount:4000");
+  console.log("mount:4000", props);
   render(props);
 }
 
