@@ -1,0 +1,89 @@
+@import "~antd/dist/antd.css";
+
+@font-face {
+  font-family: "FZY4K";
+  src: url("./../media/font/FZY4K.ttf");
+}
+
+@font-face {
+  font-family: "BGOTHL";
+  src: url("./../media/font/BGOTHL.ttf");
+}
+
+body {
+  margin: 0;
+  /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+      "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+      sans-serif; */
+  font-family: "SF Pro SC", "SF Pro Text", "SF Pro Icons", "PingFang SC",
+    "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 100%;
+}
+
+#microApp {
+  height: 100%;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.lean-homeStyle {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  position: relative;
+  font-size: 32px;
+  .lean-footer {
+    > button {
+      font-size: 20px;
+    }
+  }
+  > div:last-child {
+    text-align: right;
+  }
+  .lean-homeCursor {
+    animation: toggle 0.7s infinite;
+  }
+}
+
+@keyframes toggle {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.lean-markdownContent {
+  padding-left: 100px;
+  pre {
+    display: block;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    color: #3ac100;
+    code {
+      padding: 15px;
+      background: #f1f1f1;
+      display: inline-block;
+      border-radius: 8px;
+    }
+  }
+  h2 {
+    margin-top: 80px;
+  }
+}
+
+.lean-fontList {
+  padding: 100px;
+  span {
+    font-size: 32px;
+    margin-top: 15px;
+  }
+}
