@@ -1,0 +1,23 @@
+{
+  "name": "qiankun_demo",
+  "version": "1.0.0",
+  "description": "我觉得这篇[文章](http://www.ayqy.net/blog/micro-frontends/)可以很好的说明.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node ./start.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/junjie-lean/qiankun-react-microApp-practice.git"
+  },
+  "keywords": [],
+  "author": "junjie.lean <junjie.lean@foxmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/junjie-lean/qiankun-react-microApp-practice/issues"
+  },
+  "homepage": "https://github.com/junjie-lean/qiankun-react-microApp-practice#readme",
+  "dependencies": {
+    "redux-thunk": "^2.3.0"
+  }
+}

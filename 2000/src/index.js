@@ -2,7 +2,7 @@
  * @Author: junjie.lean
  * @Date: 2020-01-09 14:17:37
  * @Last Modified by: junjie.lean
- * @Last Modified time: 2020-11-10 09:29:12
+ * @Last Modified time: 2020-11-16 15:02:31
  */
 
 import "core-js";
@@ -24,6 +24,7 @@ const qiankunStartConfig = {};
 const defaultState = { token: "", orgcode: "" };
 
 export const action = initGlobalState(defaultState);
+
 action.onGlobalStateChange((setState) => {
   console.log(setState);
 });
