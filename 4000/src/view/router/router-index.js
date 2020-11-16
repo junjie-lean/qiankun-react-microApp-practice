@@ -11,7 +11,6 @@ import Home from "../page/layout-home";
 export default function RouterRelation(props) {
   let { baseHash } = props;
   let bHash = window.__POWERED_BY_QIANKUN__ ? baseHash : "";
-  console.log(bHash);
   return (
     <Router>
       <Switch>

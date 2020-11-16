@@ -2,7 +2,7 @@
  * @Author: junjie.lean
  * @Date: 2020-11-16 10:43:23
  * @Last Modified by: junjie.lean
- * @Last Modified time: 2020-11-16 11:00:15
+ * @Last Modified time: 2020-11-16 17:53:34
  */
 
 /**
@@ -18,6 +18,10 @@ const defaultVersion = {
   },
 };
 
+const defaultGloableState = {
+  state: {},
+};
+
 export const someCompenentValue_reducer = (
   state = defaultVersion,
   { type }
@@ -30,6 +34,22 @@ export const someCompenentValue_reducer = (
     }
     default: {
       return state;
+    }
+  }
+};
+
+export const globalState_reducer = (
+  defaultState = defaultGloableState,
+  { type, globalState }
+) => {
+  switch (type) {
+    case "SET_GLOBAL_STATE": {
+      return {
+        state: globalState,
+      };
+    }
+    default: {
+      return { ...defaultState };
     }
   }
 };

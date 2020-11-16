@@ -2,10 +2,10 @@
  * @Author: junjie.lean
  * @Date: 2020-03-17 09:52:08
  * @Last Modified by: junjie.lean
- * @Last Modified time: 2020-11-16 16:48:15
+ * @Last Modified time: 2020-11-16 17:01:06
  */
 
-import React, { useEffect } from "react";
+import React from "react";
 import zhCN from "antd/lib/locale-provider/zh_CN";
 import RouterRelation from "../router/router-index";
 import ProfilerMoniter from "./public-profile";
@@ -41,12 +41,6 @@ const ContextProvider = (props) => {
   const store = createStore(myPersistReducer, composedEnhancers);
   const persistor = persistStore(store);
 
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch({ type: "null" });
-  }, []);
-
   return (
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
@@ -56,12 +50,12 @@ const ContextProvider = (props) => {
   );
 };
 
-export default function App() {
+export default function App(props) {
   return (
     <ConfigProvider locale={zhCN}>
       <ProfilerMoniter id="react-app-moniter-root" open={false}>
         <ContextProvider>
-          <RouterRelation />
+          <RouterRelation {...props} />
         </ContextProvider>
       </ProfilerMoniter>
     </ConfigProvider>
