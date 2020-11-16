@@ -2,24 +2,33 @@ import React from "react";
 import {
   HashRouter as Router,
   Route,
-  Switch,
+  // Switch,
   Redirect,
 } from "react-router-dom";
 
+import Loading from "../page/layout-loading";
 import Home from "../page/layout-home";
-import Hash from "../page/layout-hash";
+import Font from "../page/layout-font";
+import { AnimatedSwitch as Switch } from "react-router-transition";
+import Test from "./../page/layout-class";
 
-export default function RouterRelation(props) {
-  let { pathname, hash } = window.location;
-  let { baseHash } = props;
-  let bHash = window.__POWERED_BY_QIANKUN__ ? baseHash : "";
+export default function RouterRelation() {
+  // console.log("router");
   return (
-    <Router>
-      <Switch>
-        <Route path={bHash + "/"} exact component={Home} />
-        <Route path={bHash + "/home"} exact component={Home} />
-        <Route path={bHash + "/hash"} exact component={Hash} />
-        <Redirect to={bHash + "/"} />
+    <Router basename="/">
+      <Switch
+        atEnter={{ opacity: 0 }}
+        atLeave={{ opacity: 0 }}
+        atActive={{ opacity: 1 }}
+        className="switch-wrapper"
+      >
+        <Route exact path="/" component={Loading} />
+        <Route path="/loading" component={Loading} />
+        <Route path="/home" component={Home} />
+        <Route path="/font" component={Font} />
+        <Route path="/test" component={Test} />
+        {/* <Route path="/changelog" component={ChangeLog} /> */}
+        <Redirect to="/loading" />
       </Switch>
     </Router>
   );

@@ -2,7 +2,7 @@
  * @Author: junjie.lean
  * @Date: 2020-03-17 09:52:08
  * @Last Modified by: junjie.lean
- * @Last Modified time: 2020-11-16 15:16:52
+ * @Last Modified time: 2020-11-16 15:40:28
  */
 
 import React, { createContext, useEffect } from "react";
@@ -10,7 +10,6 @@ import zhCN from "antd/lib/locale-provider/zh_CN";
 import RouterRelation from "../router/router-index";
 import ProfilerMoniter from "./public-profile";
 import { ConfigProvider } from "antd";
-
 import thunk from "redux-thunk";
 import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
@@ -55,11 +54,11 @@ export default function App(props) {
   const store = {};
   return (
     <ConfigProvider locale={zhCN}>
-      <Context.Provider value={store}>
-        <ProfilerMoniter id="react-root-app" open={false}>
-          <RouterRelation {...props} />
-        </ProfilerMoniter>
-      </Context.Provider>
+      <ProfilerMoniter id="react-root-app" open={false}>
+        <ContextProvider>
+          <RouterRelation />
+        </ContextProvider>
+      </ProfilerMoniter>
     </ConfigProvider>
   );
 }

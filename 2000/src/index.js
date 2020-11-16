@@ -2,7 +2,7 @@
  * @Author: junjie.lean
  * @Date: 2020-01-09 14:17:37
  * @Last Modified by: junjie.lean
- * @Last Modified time: 2020-11-16 15:02:31
+ * @Last Modified time: 2020-11-16 16:21:17
  */
 
 import "core-js";
@@ -25,8 +25,8 @@ const defaultState = { token: "", orgcode: "" };
 
 export const action = initGlobalState(defaultState);
 
-action.onGlobalStateChange((setState) => {
-  console.log(setState);
+action.onGlobalStateChange((state) => {
+  console.log("2000 listen state:", state);
 });
 
 registerMicroApps([
