@@ -2,26 +2,28 @@
  * @Author: junjie.lean
  * @Date: 2020-03-18 11:00:47
  * @Last Modified by: junjie.lean
- * @Last Modified time: 2020-11-06 17:36:00
+ * @Last Modified time: 2020-11-17 13:29:41
  */
 
 import React, { useEffect, useState, useRef } from "react";
 import "./../../style/index.scss";
-import { Button } from "antd";
+import { useSelector } from "react-redux";
 
 function Home(props) {
-  
+  let reduxProps = useSelector((state) => state);
+
+  let {
+    globalState_reducer: {
+      state: { token, orgcode },
+    },
+  } = reduxProps;
+
+  const [string, setString] = useState(token);
+  console.log("3000 layout :", string);
   return (
     <div>
-      <p>4000</p>
-      <Button
-        onClick={() => {
-          props.history.push("/home/3000/home");
-        }}
-        type="primary"
-      >
-        to 3000
-      </Button>
+      <p>message from primary:</p>
+      <p>{string || "未设置"}</p>
     </div>
   );
 }

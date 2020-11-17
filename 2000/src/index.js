@@ -2,7 +2,7 @@
  * @Author: junjie.lean
  * @Date: 2020-01-09 14:17:37
  * @Last Modified by: junjie.lean
- * @Last Modified time: 2020-11-16 16:21:17
+ * @Last Modified time: 2020-11-17 13:26:20
  */
 
 import "core-js";
@@ -20,7 +20,9 @@ const DOM = document.getElementById("microApp");
 document.title = "qiankun micro app framework";
 window.__POWERED_BY_QIANKUN__ = true;
 
-const qiankunStartConfig = {};
+const qiankunStartConfig = {
+  perfetch: "all",
+};
 const defaultState = { token: "", orgcode: "" };
 
 export const action = initGlobalState(defaultState);
@@ -33,25 +35,25 @@ registerMicroApps([
   {
     name: "react app 3000",
     entry: "//localhost:3000",
-    container: "#microContainer",
+    container: "#microContainer3000",
     activeRule: (location) => {
-      let condition = location.hash.indexOf("home/3000") > -1;
+      let condition = location.hash.indexOf("micro/3000") > -1;
       return condition;
     },
     props: {
-      baseHash: "/home/3000",
+      baseHash: "/micro/3000",
     },
   },
   {
     name: "react app 4000",
     entry: "//localhost:4000",
-    container: "#microContainer",
+    container: "#microContainer4000",
     activeRule: (location) => {
-      let condition = location.hash.indexOf("home/4000") > -1;
+      let condition = location.hash.indexOf("micro/4000") > -1;
       return condition;
     },
     props: {
-      baseHash: "/home/4000",
+      baseHash: "/micro/4000",
     },
   },
 ]);

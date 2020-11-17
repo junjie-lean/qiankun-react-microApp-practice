@@ -12,7 +12,7 @@
 
 body {
   margin: 0;
-  // padding: 3px;
+  padding: 30px;
   /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
       "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
       sans-serif; */
@@ -27,7 +27,8 @@ code {
     monospace;
 }
 
-#app {
+#app,
+#microAppContainer3000 {
   height: 100%;
 }
 
@@ -60,7 +61,7 @@ code {
     bottom: 0;
     right: 0;
     content: "";
-    filter: grayscale(1);
+    // filter: grayscale(1);
     z-index: -1;
   }
 }

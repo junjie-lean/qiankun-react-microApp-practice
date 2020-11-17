@@ -5,18 +5,27 @@ import {
   Switch,
   Redirect,
 } from "react-router-dom";
-
+import { useSelector, useDispatch } from "react-redux";
+import { setGlobal_action } from "./../../redux/actions/qiankun.globalState.action";
 import Home from "../page/layout-home";
 
 export default function RouterRelation(props) {
-  let { baseHash } = props;
-  let bHash = window.__POWERED_BY_QIANKUN__ ? baseHash : "";
+  let baseHash = "";
+  let dispatch = useDispatch();
+  if (window.__POWERED_BY_QIANKUN__) {
+    props.onGlobalStateChange((state) => {
+      console.log("3000 listen state:", state);
+      dispatch(setGlobal_action(state));
+    }, true);
+    baseHash = props.baseHash;
+  }
+  
   return (
     <Router>
       <Switch>
-        <Route path={bHash + "/"} exact component={Home} />
-        <Route path={bHash + "/home"} exact component={Home} />
-        <Redirect to={bHash + "/"} />
+        <Route path={baseHash + "/"} exact component={Home} />
+        <Route path={baseHash + "/home"} exact component={Home} />
+        <Redirect to={baseHash + "/"} />
       </Switch>
     </Router>
   );

@@ -2,7 +2,7 @@
  * @Author: junjie.lean
  * @Date: 2020-03-18 11:00:47
  * @Last Modified by: junjie.lean
- * @Last Modified time: 2020-11-09 17:42:19
+ * @Last Modified time: 2020-11-17 13:20:49
  */
 
 import React, { useEffect, useState, useRef } from "react";
@@ -14,6 +14,7 @@ import {
 } from "@ant-design/icons";
 const { Header, Content, Footer, Sider } = Layout;
 import { HomeRouter } from "./../router/router-index";
+
 function Home(props) {
   return (
     <div style={{ height: "100%" }}>
@@ -25,12 +26,12 @@ function Home(props) {
           >
             qiankun
           </div>
-          <Menu theme="dark" mode="inline" defaultSelectedKeys={["1"]}>
+          <Menu theme="dark" mode="inline" defaultSelectedKeys={["0"]}>
             <Menu.Item
               key="0"
               icon={<HddOutlined />}
               onClick={() => {
-                props.history.push("/home/2000");
+                props.history.push("/micro/2000");
               }}
             >
               2000
@@ -39,7 +40,7 @@ function Home(props) {
               key="1"
               icon={<UserOutlined />}
               onClick={() => {
-                props.history.push("/home/3000");
+                props.history.push("/micro/3000/home");
               }}
             >
               3000
@@ -48,7 +49,7 @@ function Home(props) {
               key="2"
               icon={<VideoCameraOutlined />}
               onClick={() => {
-                props.history.push("/home/4000");
+                props.history.push("/micro/4000/");
               }}
             >
               4000
@@ -65,7 +66,8 @@ function Home(props) {
               className="site-layout-background"
               style={{ padding: 24, minHeight: 360 }}
             >
-              <div id="microContainer"></div>
+              <div id="microContainer3000"></div>
+              <div id="microContainer4000"></div>
               <HomeRouter />
             </div>
           </Content>

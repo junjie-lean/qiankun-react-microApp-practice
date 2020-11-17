@@ -16,8 +16,8 @@ export default function RouterRelation() {
       <Switch>
         <Route exact path="/" component={Loading} />
         <Route path="/loading" component={Loading} />
-        <Route path="/home" component={Home} />
-        <Redirect to="/loading" />
+        <Route path="/micro" component={Home} />
+        {/* <Redirect to="/micro" /> */}
       </Switch>
     </Router>
   );
@@ -26,7 +26,7 @@ export default function RouterRelation() {
 export function HomeRouter() {
   return (
     <Switch>
-      <Route path="/home/2000" component={Self} />
+      <Route path="/micro/2000" component={Self} />
     </Switch>
   );
 }

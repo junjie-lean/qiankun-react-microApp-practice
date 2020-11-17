@@ -2,17 +2,16 @@
  * @Author: junjie.lean
  * @Date: 2020-01-09 14:17:37
  * @Last Modified by: junjie.lean
- * @Last Modified time: 2020-11-16 17:20:09
+ * @Last Modified time: 2020-11-17 13:16:37
  */
 
 import "core-js";
 import React from "react";
 import ReactDOM, { render } from "react-dom";
 import App from "./view/public/public-provider";
-// import svgs from "!!raw-loader!./media/svg/symbol-defs.svg";
 const DOM = document.getElementById("microAppContainer3000");
+
 document.title = "jf-web-app-hook";
-// document.querySelector("#svg").innerHTML += svgs;
 
 if (!window.__POWERED_BY_QIANKUN__) {
   render(<App />, DOM);
@@ -26,9 +25,6 @@ export async function bootstrap() {
  * 应用每次进入都会调用 mount 方法，在这里触发应用的渲染方法
  */
 export async function mount(props) {
-  // props.onGlobalStateChange((next, prev) => {
-  //   const nextProps = { ...props, ...next };
-  // });
   render(<App {...props} />, DOM);
 }
 
