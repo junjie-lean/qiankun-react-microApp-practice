@@ -2,7 +2,7 @@
  * @Author: junjie.lean
  * @Date: 2020-11-09 17:32:29
  * @Last Modified by: junjie.lean
- * @Last Modified time: 2020-11-16 16:43:40
+ * @Last Modified time: 2020-11-18 14:53:34
  */
 
 import React, { useState, useEffect } from "react";
@@ -12,6 +12,7 @@ import { action } from "./../../index";
 export default withRouter((props) => {
   const [token, setToken] = useState("");
   const [disableTimeClick, setDisableState] = useState(false);
+
   return (
     <div>
       <p>2000</p>

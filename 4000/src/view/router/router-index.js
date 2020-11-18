@@ -14,18 +14,18 @@ export default function RouterRelation(props) {
   let dispatch = useDispatch();
   if (window.__POWERED_BY_QIANKUN__) {
     props.onGlobalStateChange((state) => {
-      console.log("3000 listen state:", state);
+      console.log("4000 listen state:", state);
       dispatch(setGlobal_action(state));
-    }, true);
+    });
     baseHash = props.baseHash;
   }
-  
+
   return (
     <Router>
       <Switch>
         <Route path={baseHash + "/"} exact component={Home} />
         <Route path={baseHash + "/home"} exact component={Home} />
-        <Redirect to={baseHash + "/"} />
+        {/* <Redirect to={baseHash + "/"} /> */}
       </Switch>
     </Router>
   );

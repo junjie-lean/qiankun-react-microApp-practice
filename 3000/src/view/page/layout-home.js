@@ -2,7 +2,7 @@
  * @Author: junjie.lean
  * @Date: 2020-03-18 11:00:47
  * @Last Modified by: junjie.lean
- * @Last Modified time: 2020-11-17 13:29:41
+ * @Last Modified time: 2020-11-17 14:38:59
  */
 
 import React, { useEffect, useState, useRef } from "react";
@@ -19,7 +19,6 @@ function Home(props) {
   } = reduxProps;
 
   const [string, setString] = useState(token);
-  console.log("3000 layout :", string);
   return (
     <div>
       <p>message from primary:</p>

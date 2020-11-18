@@ -2,7 +2,7 @@
  * @Author: junjie.lean
  * @Date: 2020-03-17 09:52:08
  * @Last Modified by: junjie.lean
- * @Last Modified time: 2020-11-16 15:40:28
+ * @Last Modified time: 2020-11-17 14:06:10
  */
 
 import React, { createContext, useEffect } from "react";
@@ -25,7 +25,7 @@ const ContextProvider = (props) => {
   //redux同步机制
   //利用redux-persist持久化本地数据,使刷新页面后,redux状态值不丢失.
   const persistConfig = {
-    key: "root",
+    key: "root2000",
     storage: storageSession,
     // storage: storageLocal,
     stateReconciler: autoMergeLevel2, // 查看 'Merge Process' 部分的具体情况
@@ -51,7 +51,6 @@ const ContextProvider = (props) => {
 };
 
 export default function App(props) {
-  const store = {};
   return (
     <ConfigProvider locale={zhCN}>
       <ProfilerMoniter id="react-root-app" open={false}>

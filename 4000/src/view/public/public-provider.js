@@ -2,7 +2,7 @@
  * @Author: junjie.lean
  * @Date: 2020-03-17 09:52:08
  * @Last Modified by: junjie.lean
- * @Last Modified time: 2020-11-17 13:38:36
+ * @Last Modified time: 2020-11-17 14:07:07
  */
 
 import React from "react";
@@ -25,7 +25,7 @@ const ContextProvider = (props) => {
   //redux同步机制
   //利用redux-persist持久化本地数据,使刷新页面后,redux状态值不丢失.
   const persistConfig = {
-    key: "root",
+    key: "root4000",
     storage: storageSession,
     // storage: storageLocal,
     stateReconciler: autoMergeLevel2, // 查看 'Merge Process' 部分的具体情况

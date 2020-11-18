@@ -12,7 +12,7 @@
 
 body {
   margin: 0;
-  padding: 30px;
+  // padding: 30px;
   /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
       "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
       sans-serif; */
@@ -30,6 +30,7 @@ code {
 #app,
 #microAppContainer3000 {
   height: 100%;
+  padding: 30px;
 }
 
 .lean-homeStyle {
