@@ -2,7 +2,7 @@
  * @Author: junjie.lean
  * @Date: 2020-03-18 11:00:47
  * @Last Modified by: junjie.lean
- * @Last Modified time: 2020-11-17 14:48:46
+ * @Last Modified time: 2020-11-20 14:29:02
  */
 
 import React, { useEffect, useState, useRef } from "react";
@@ -66,9 +66,8 @@ function Home(props) {
               className="site-layout-background"
               style={{ padding: 24, minHeight: 360 }}
             >
-              <div id="microContainer3000"></div>
-              <div id="microContainer4000"></div>
               <HomeRouter />
+              <div id="microAppContent"></div>
             </div>
           </Content>
           <Footer style={{ textAlign: "center" }}>

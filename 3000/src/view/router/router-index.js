@@ -13,11 +13,13 @@ export default function RouterRelation(props) {
   let baseHash = "";
   let dispatch = useDispatch();
   if (window.__POWERED_BY_QIANKUN__) {
-    console.log(props);
-    props.onGlobalStateChange((state) => {
-      console.log("3000 listen state:", state);
-      dispatch(setGlobal_action(state));
-    });
+    console.log("3000 router :", props);
+    props.onGlobalStateChange
+      ? props.onGlobalStateChange((state) => {
+          console.log("3000 listen state:", state);
+          dispatch(setGlobal_action(state));
+        }, true)
+      : "";
     baseHash = props.baseHash;
   }
 

@@ -16,7 +16,7 @@ export default function RouterRelation(props) {
     props.onGlobalStateChange((state) => {
       console.log("4000 listen state:", state);
       dispatch(setGlobal_action(state));
-    });
+    }, true);
     baseHash = props.baseHash;
   }
 
