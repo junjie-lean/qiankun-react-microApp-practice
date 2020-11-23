@@ -2,7 +2,7 @@
  * @Author: junjie.lean
  * @Date: 2020-03-18 11:00:47
  * @Last Modified by: junjie.lean
- * @Last Modified time: 2020-11-23 13:37:11
+ * @Last Modified time: 2020-11-23 13:46:27
  */
 
 import React, { useEffect, useState, useRef } from "react";
@@ -26,5 +26,4 @@ function Home(props) {
     </div>
   );
 }
-
 export default Home;
