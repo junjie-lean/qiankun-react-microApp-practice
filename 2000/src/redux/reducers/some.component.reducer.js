@@ -2,7 +2,7 @@
  * @Author: junjie.lean
  * @Date: 2020-11-16 10:43:23
  * @Last Modified by: junjie.lean
- * @Last Modified time: 2020-11-16 11:00:15
+ * @Last Modified time: 2020-11-23 13:29:49
  */
 
 /**
@@ -20,16 +20,32 @@ const defaultVersion = {
 
 export const someCompenentValue_reducer = (
   state = defaultVersion,
-  { type }
+  { type, data }
 ) => {
   switch (type) {
     case "some unique value": {
       return {
-        version: undefined,
+        version: data,
       };
     }
     default: {
       return state;
+    }
+  }
+};
+const defaultToken = {
+  token: "unset",
+};
+
+export const token_reducer = (state = defaultToken, { type, token }) => {
+  switch (type) {
+    case "modify_token": {
+      return {
+        token: token,
+      };
+    }
+    default: {
+      return defaultToken;
     }
   }
 };

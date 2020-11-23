@@ -2,7 +2,7 @@
  * @Author: junjie.lean
  * @Date: 2020-03-18 11:00:47
  * @Last Modified by: junjie.lean
- * @Last Modified time: 2020-11-17 14:38:59
+ * @Last Modified time: 2020-11-23 13:37:11
  */
 
 import React, { useEffect, useState, useRef } from "react";
@@ -21,7 +21,7 @@ function Home(props) {
   const [string, setString] = useState(token);
   return (
     <div>
-      <p>message from primary:</p>
+      <p>来自主应用的token:</p>
       <p>{string || "未设置"}</p>
     </div>
   );

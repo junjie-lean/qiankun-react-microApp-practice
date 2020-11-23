@@ -2,7 +2,7 @@
  * @Author: junjie.lean
  * @Date: 2020-01-09 14:17:37
  * @Last Modified by: junjie.lean
- * @Last Modified time: 2020-11-20 14:37:49
+ * @Last Modified time: 2020-11-23 10:43:42
  */
 
 import "core-js";
@@ -20,7 +20,8 @@ if (!window.__POWERED_BY_QIANKUN__) {
 }
 
 export async function bootstrap(props) {
-  render(props);
+  const DOM = document.getElementById("microAppContainer3000");
+  ReactDOM.render(<div> 加载中.......</div>, DOM);
 }
 
 export async function mount(props) {
@@ -35,8 +36,6 @@ export async function unmount() {
   const DOM = document.getElementById("microAppContainer3000");
   ReactDOM.unmountComponentAtNode(DOM);
 }
-
-
 
 export async function update(props) {
   console.log("update props", props);
