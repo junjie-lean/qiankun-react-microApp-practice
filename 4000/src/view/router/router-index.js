@@ -14,7 +14,7 @@ export default function RouterRelation(props) {
   let dispatch = useDispatch();
   if (window.__POWERED_BY_QIANKUN__) {
     props.onGlobalStateChange((state) => {
-      console.log("4000 listen state:", state);
+      // console.log("4000 listen state:", state);
       dispatch(setGlobal_action(state));
     }, true);
     baseHash = props.baseHash;
