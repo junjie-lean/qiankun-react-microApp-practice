@@ -2,7 +2,7 @@
  * @Author: junjie.lean
  * @Date: 2020-11-09 17:32:29
  * @Last Modified by: junjie.lean
- * @Last Modified time: 2020-11-23 13:32:29
+ * @Last Modified time: 2020-11-25 13:55:54
  */
 
 import React, { useState, useEffect } from "react";
@@ -11,6 +11,7 @@ import { Button } from "antd";
 import { action } from "./../../index";
 import { useSelector, useDispatch } from "react-redux";
 import { modifyToken_action } from "./../../redux/actions/index.actions";
+
 export default withRouter((props) => {
   const [token, setToken] = useState("");
 
@@ -18,7 +19,7 @@ export default withRouter((props) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    console.log("reduxProps:", reduxProps);
+    // console.log("reduxProps:", reduxProps);
   });
 
   action?.onGlobalStateChange((state) => {
@@ -27,6 +28,7 @@ export default withRouter((props) => {
 
   useEffect(() => {
     setToken(reduxProps.token_reducer.token || "");
+
   }, []);
   return (
     <div>
