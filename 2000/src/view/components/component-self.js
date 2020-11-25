@@ -2,7 +2,7 @@
  * @Author: junjie.lean
  * @Date: 2020-11-09 17:32:29
  * @Last Modified by: junjie.lean
- * @Last Modified time: 2020-11-25 13:55:54
+ * @Last Modified time: 2020-11-25 17:06:54
  */
 
 import React, { useState, useEffect } from "react";
@@ -11,8 +11,6 @@ import { Button } from "antd";
 import { action } from "./../../index";
 import { useSelector, useDispatch } from "react-redux";
 import { modifyToken_action } from "./../../redux/actions/index.actions";
-
-
 
 export default withRouter((props) => {
   const [token, setToken] = useState("");
@@ -30,15 +28,14 @@ export default withRouter((props) => {
 
   useEffect(() => {
     setToken(reduxProps.token_reducer.token || "");
-
   }, []);
   return (
     <div>
-      <p>这是2000端口起的项目:</p>
+      <p>这是主应用中的页面:</p>
+      <hr />
       <p>
         <span>{token ? "token:" + token : ""}</span>
       </p>
-      <hr />
       <Button
         onClick={() => {
           let tk = Array.from({ length: 64 })
@@ -52,7 +49,6 @@ export default withRouter((props) => {
       >
         生成token
       </Button>
-      <br />
       <br />
       <br />
       <Button

@@ -2,7 +2,7 @@
  * @Author: junjie.lean
  * @Date: 2020-03-17 09:52:08
  * @Last Modified by: junjie.lean
- * @Last Modified time: 2020-11-20 14:29:09
+ * @Last Modified time: 2020-11-25 17:07:58
  */
 
 import React from "react";
@@ -55,7 +55,7 @@ export default function App(props) {
     <ConfigProvider locale={zhCN}>
       <ProfilerMoniter id="react-app-moniter-root" open={false}>
         <ContextProvider>
-          这是3000端口起的项目:
+          子项目A:
           <RouterRelation {...props} />
         </ContextProvider>
       </ProfilerMoniter>

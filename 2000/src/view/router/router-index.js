@@ -9,6 +9,7 @@ import {
 import Loading from "../page/layout-loading";
 import Home from "../page/layout-home";
 import Self from "./../components/component-self";
+import Iframe from "./../components/component-iframe";
 
 export default function RouterRelation() {
   return (
@@ -27,6 +28,7 @@ export function HomeRouter() {
   return (
     <Switch>
       <Route path="/micro/2000" component={Self} />
+      <Route path="/micro/iframe" component={Iframe} />
     </Switch>
   );
 }

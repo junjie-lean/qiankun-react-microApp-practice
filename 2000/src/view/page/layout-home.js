@@ -2,15 +2,16 @@
  * @Author: junjie.lean
  * @Date: 2020-03-18 11:00:47
  * @Last Modified by: junjie.lean
- * @Last Modified time: 2020-11-20 14:29:02
+ * @Last Modified time: 2020-11-25 17:05:43
  */
 
 import React, { useEffect, useState, useRef } from "react";
-import { Layout, Menu } from "antd";
+import { Layout, Menu, Button } from "antd";
 import {
   UserOutlined,
   VideoCameraOutlined,
   HddOutlined,
+  IdcardFilled,
 } from "@ant-design/icons";
 const { Header, Content, Footer, Sider } = Layout;
 import { HomeRouter } from "./../router/router-index";
@@ -34,7 +35,7 @@ function Home(props) {
                 props.history.push("/micro/2000");
               }}
             >
-              2000
+              pirmary
             </Menu.Item>
             <Menu.Item
               key="1"
@@ -43,7 +44,7 @@ function Home(props) {
                 props.history.push("/micro/3000/home");
               }}
             >
-              3000
+              micro app a
             </Menu.Item>
             <Menu.Item
               key="2"
@@ -52,7 +53,16 @@ function Home(props) {
                 props.history.push("/micro/4000/");
               }}
             >
-              4000
+              micro app b
+            </Menu.Item>
+            <Menu.Item
+              key="3"
+              icon={<IdcardFilled />}
+              onClick={() => {
+                props.history.push("/micro/iframe");
+              }}
+            >
+              iframe app
             </Menu.Item>
           </Menu>
         </Sider>
@@ -64,15 +74,13 @@ function Home(props) {
           <Content style={{ margin: "24px 16px 0" }}>
             <div
               className="site-layout-background"
-              style={{ padding: 24, minHeight: 360 }}
+              style={{ padding: 24, height: "100%" }}
             >
               <HomeRouter />
               <div id="microAppContent"></div>
             </div>
           </Content>
-          <Footer style={{ textAlign: "center" }}>
-            Ant Design ©2018 Created by Ant UED
-          </Footer>
+          <Footer style={{ textAlign: "center" }}></Footer>
         </Layout>
       </Layout>
     </div>
