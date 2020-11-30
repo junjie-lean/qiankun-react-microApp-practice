@@ -44,6 +44,8 @@ qiankun的特点:
 
 ## qiankun实例
 
+在github上的[demo](https://github.com/junjie-lean/qiankun-react-microApp-practice)地址
+
 #### 子应用端:  
 
 1. 目前基于react web端的脚手架已支持直接作为子应用开发,可以做到开箱即用;
