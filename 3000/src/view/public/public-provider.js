@@ -2,7 +2,7 @@
  * @Author: junjie.lean
  * @Date: 2020-03-17 09:52:08
  * @Last Modified by: junjie.lean
- * @Last Modified time: 2020-11-25 17:07:58
+ * @Last Modified time: 2021-05-25 14:12:56
  */
 
 import React from "react";
@@ -55,7 +55,6 @@ export default function App(props) {
     <ConfigProvider locale={zhCN}>
       <ProfilerMoniter id="react-app-moniter-root" open={false}>
         <ContextProvider>
-          子项目A:
           <RouterRelation {...props} />
         </ContextProvider>
       </ProfilerMoniter>

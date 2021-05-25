@@ -8,6 +8,7 @@ import {
 
 import Loading from "../page/layout-loading";
 import Home from "../page/layout-home";
+import Container from "./../page/layout-container";
 import Self from "./../components/component-self";
 import Iframe from "./../components/component-iframe";
 
@@ -18,6 +19,7 @@ export default function RouterRelation() {
         <Route exact path="/" component={Loading} />
         <Route path="/loading" component={Loading} />
         <Route path="/micro" component={Home} />
+        <Route path="/cs" component={Container} />
         {/* <Redirect to="/micro" /> */}
       </Switch>
     </Router>

@@ -2,7 +2,7 @@
  * @Author: junjie.lean
  * @Date: 2020-01-09 14:17:37
  * @Last Modified by: junjie.lean
- * @Last Modified time: 2020-11-25 17:22:31
+ * @Last Modified time: 2021-03-15 16:26:56
  */
 
 import "core-js";
@@ -23,7 +23,7 @@ window.__POWERED_BY_QIANKUN__ = true;
 
 const qiankunStartConfig = {
   perfetch: 1 === 1,
-  singular: 1 === 1,
+  singular: false,
 };
 const defaultState = { token: "", orgcode: "" };
 
@@ -36,23 +36,25 @@ export const action = initGlobalState(defaultState);
 registerMicroApps([
   {
     name: "react app 3000",
-    entry: "//" + location.hostname + ":3000",
-    container: "#microAppContent",
-    activeRule: (location) => location.hash.indexOf("micro/3000") > -1,
+    entry: "//" + location.hostname + ":3002",
+    container: ".micro1",
+    activeRule: (location) => location.hash.indexOf("/cs") > -1,
     props: {
-      baseHash: "/micro/3000",
+      baseHash: "",
+      route: 1,
     },
   },
-  {
-    name: "react app 4000",
-    entry: "//" + location.hostname + ":4000",
-    // entry: "//localhost:4000",
-    container: "#microAppContent",
-    activeRule: (location) => location.hash.indexOf("micro/4000") > -1,
-    props: {
-      baseHash: "/micro/4000",
-    },
-  },
+  // {
+  //   name: "react app 4000",
+  //   entry: "//" + location.hostname + ":3002",
+  //   // entry: "//localhost:4000",
+  //   container: ".micro2",
+  //   activeRule: (location) => location.hash.indexOf("/cs") > -1,
+  //   props: {
+  //     baseHash: "",
+  //     route: 2,
+  //   },
+  // },
 ]);
 
 start(qiankunStartConfig);
