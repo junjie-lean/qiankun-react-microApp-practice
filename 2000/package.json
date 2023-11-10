@@ -35,7 +35,7 @@
     "@babel/runtime": "7.12.1",
     "@babel/runtime-corejs3": "7.12.1",
     "antd": "4.7.3",
-    "axios": "0.21.0",
+    "axios": "1.6.0",
     "babel-jest": "26.6.1",
     "babel-loader": "8.1.0",
     "babel-plugin-autobind-class-methods": "5.0.1",
